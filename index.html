@@ -1,0 +1,328 @@
+<title>Coronation Day</title>
+<style>
+  :root {
+    --bg: #f7c9d6;
+    --card: #fdf6f2;
+    --pink: #e79bb5;
+    --pink-deep: #c9648c;
+    --pink-line: #f0c9d6;
+    --ink: #5c3a46;
+    --ink-soft: #9c7683;
+  }
+  :root[data-theme="dark"] {
+    --bg: #3a2530;
+    --card: #2c1f27;
+    --pink: #e79bb5;
+    --pink-deep: #f0aac3;
+    --pink-line: #4a3540;
+    --ink: #f5e6ec;
+    --ink-soft: #c9a8b6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #3a2530;
+      --card: #2c1f27;
+      --pink: #e79bb5;
+      --pink-deep: #f0aac3;
+      --pink-line: #4a3540;
+      --ink: #f5e6ec;
+      --ink-soft: #c9a8b6;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: radial-gradient(circle at 20% 10%, var(--bg), #f4b8c9 60%, #eda9c0 100%);
+    color: var(--ink);
+    font-family: 'Segoe UI', 'DM Sans', sans-serif;
+    line-height: 1.55;
+  }
+
+  .page {
+    max-width: 480px;
+    margin: 48px auto;
+    background: var(--card);
+    border-radius: 28px;
+    padding: 44px 32px 40px;
+    box-shadow: 0 30px 60px -20px rgba(120, 40, 70, 0.35);
+  }
+
+  .frame {
+    width: 168px;
+    height: 168px;
+    margin: 0 auto 24px;
+    border-radius: 50% 50% 46% 46% / 55% 55% 45% 45%;
+    background: linear-gradient(160deg, var(--pink), var(--pink-deep));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    border: 6px solid var(--card);
+    outline: 3px solid var(--pink-line);
+    outline-offset: 4px;
+  }
+
+  h1.name {
+    text-align: center;
+    font-family: 'Brush Script MT', 'Segoe Script', cursive;
+    font-size: 44px;
+    color: var(--pink-deep);
+    margin: 0 0 4px;
+    font-weight: 400;
+  }
+
+  .eyebrow {
+    text-align: center;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: var(--ink-soft);
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
+
+  .intro {
+    text-align: center;
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    max-width: 360px;
+    margin: 0 auto 22px;
+  }
+
+  .date-pill {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 40px;
+    padding: 9px 22px;
+    border-radius: 999px;
+    background: var(--pink-line);
+    color: var(--pink-deep);
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  h2.section {
+    font-family: 'Brush Script MT', 'Segoe Script', cursive;
+    font-size: 30px;
+    color: var(--pink-deep);
+    text-align: center;
+    font-weight: 400;
+    margin: 0 0 26px;
+  }
+
+  .court {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .court .row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 12px;
+    flex-wrap: wrap;
+  }
+
+  .guest {
+    background: var(--pink-line);
+    color: var(--pink-deep);
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 999px;
+  }
+
+  .item {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--pink-line);
+  }
+
+  .item:last-child { border-bottom: none; }
+
+  .item .icon {
+    flex: 0 0 auto;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--pink-line);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+  }
+
+  .item .body { flex: 1; }
+
+  .item .top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+  }
+
+  .item .title {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .item .time {
+    font-size: 12px;
+    color: var(--ink-soft);
+    white-space: nowrap;
+  }
+
+  .item .desc {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin-top: 3px;
+  }
+
+  .badge {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 999px;
+    margin-top: 8px;
+  }
+
+  .badge.booked {
+    background: rgba(201, 100, 140, 0.16);
+    color: var(--pink-deep);
+  }
+
+  .badge.tbc {
+    background: transparent;
+    color: var(--ink-soft);
+    border: 1px dashed var(--pink-line);
+  }
+
+  .itinerary { margin-bottom: 44px; }
+
+  .cta {
+    display: block;
+    text-align: center;
+    background: linear-gradient(135deg, var(--pink), var(--pink-deep));
+    color: #fff;
+    font-size: 13.5px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 14px 20px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+  }
+
+  footer {
+    text-align: center;
+    margin-top: 36px;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+  }
+
+  footer .bow { font-size: 18px; margin-bottom: 8px; display: block; }
+</style>
+
+<div class="page">
+  <div class="frame">👑</div>
+  <h1 class="name">Jin Ju</h1>
+  <div class="eyebrow">Her Coronation Day</div>
+  <p class="intro">A very small, very special day — just me and my two closest girls before I take the crown.</p>
+  <div class="date-pill">🗓️ Sunday, 19 July 2026</div>
+
+  <div class="court">
+    <h2 class="section">the court</h2>
+    <div class="row">
+      <span class="guest">👸 Jin Ju</span>
+      <span class="guest">🤰 Monica</span>
+      <span class="guest">🎨 Melissa</span>
+    </div>
+  </div>
+
+  <h2 class="section">the itinerary</h2>
+  <div class="itinerary">
+    <div class="item">
+      <div class="icon">🫖</div>
+      <div class="body">
+        <div class="top">
+          <div class="title">High Tea at QTea</div>
+          <div class="time">12:00–13:30</div>
+        </div>
+        <div class="desc">Sandwiches, scones and sips fit for a queen.</div>
+        <span class="badge booked">Booked</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">🎬</div>
+      <div class="body">
+        <div class="top">
+          <div class="title">Toy Story 5 — Event Cinemas George St</div>
+          <div class="time">TBC</div>
+        </div>
+        <div class="desc">Session not booked yet — coming soon.</div>
+        <span class="badge tbc">Not booked</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">📸</div>
+      <div class="body">
+        <div class="top">
+          <div class="title">Photobooth Photos</div>
+          <div class="time">TBC</div>
+        </div>
+        <div class="desc">Capturing the coronation for the archives.</div>
+        <span class="badge tbc">To plan</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">🛍️</div>
+      <div class="body">
+        <div class="top">
+          <div class="title">A Little Shopping</div>
+          <div class="time">TBC</div>
+        </div>
+        <div class="desc">Royal treasury spending, strictly for the crown.</div>
+        <span class="badge tbc">To plan</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">🍽️</div>
+      <div class="body">
+        <div class="top">
+          <div class="title">Dinner</div>
+          <div class="time">Evening</div>
+        </div>
+        <div class="desc">Venue TBC — feast befitting the occasion.</div>
+        <span class="badge tbc">To plan</span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="icon">🍰</div>
+      <div class="body">
+        <div class="top">
+          <div class="title">Dessert</div>
+          <div class="time">Evening</div>
+        </div>
+        <div class="desc">A sweet finish to the coronation.</div>
+        <span class="badge tbc">To plan</span>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span class="bow">🎀</span>
+    Long live the bride — see you Sunday, 19 July 2026
+  </footer>
+</div>
