@@ -1,3 +1,9 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
 <title>Coronation Day</title>
 <style>
   :root {
@@ -11,34 +17,9 @@
     --ink: #5c3a46;
     --ink-soft: #9c7683;
   }
-  :root[data-theme="dark"] {
-    --bg: #3a2530;
-    --bg2: #32202a;
-    --bg3: #2a1a23;
-    --card: #2c1f27;
-    --pink: #e79bb5;
-    --pink-deep: #f0aac3;
-    --pink-line: #4a3540;
-    --ink: #f5e6ec;
-    --ink-soft: #c9a8b6;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --bg: #3a2530;
-      --bg2: #32202a;
-      --bg3: #2a1a23;
-      --card: #2c1f27;
-      --pink: #e79bb5;
-      --pink-deep: #f0aac3;
-      --pink-line: #4a3540;
-      --ink: #f5e6ec;
-      --ink-soft: #c9a8b6;
-    }
-  }
-
   * { box-sizing: border-box; }
 
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; color-scheme: light; }
 
   body {
     margin: 0;
@@ -387,6 +368,8 @@
     .guest { font-size: 12px; padding: 7px 13px; }
   }
 </style>
+</head>
+<body>
 
 <div class="blob b1"></div>
 <div class="blob b2"></div>
@@ -492,3 +475,6 @@
     </footer>
   </div>
 </div>
+
+</body>
+</html>
