@@ -285,6 +285,18 @@
     border: 1px dashed var(--pink-line);
   }
 
+  .loc {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--pink-deep);
+    text-decoration: none;
+    margin-top: 6px;
+  }
+  .loc:hover, .loc:focus-visible { text-decoration: underline; }
+
   .itinerary { margin-bottom: 44px; }
 
   .cta {
@@ -409,6 +421,7 @@
             <div class="time">12:00–13:30</div>
           </div>
           <div class="desc">Sandwiches, scones and sips fit for a queen.</div>
+          <a class="loc" href="https://www.google.com/maps/search/?api=1&query=QT+Sydney+-+Gowings+Restaurant%2C+49+Market+St%2C+Sydney+NSW+2000" target="_blank" rel="noopener">📍 QT Sydney – Gowings Restaurant, 49 Market St</a>
           <span class="badge booked">Booked</span>
         </div>
       </div>
@@ -421,6 +434,7 @@
             <div class="time">TBC</div>
           </div>
           <div class="desc">Session not booked yet — coming soon.</div>
+          <a class="loc" href="https://www.google.com/maps/search/?api=1&query=Event+Cinemas+George+Street+Sydney" target="_blank" rel="noopener">📍 Event Cinemas, George St</a>
           <span class="badge tbc">Not booked</span>
         </div>
       </div>
@@ -453,11 +467,12 @@
         <div class="icon">🍽️</div>
         <div class="body">
           <div class="top">
-            <div class="title">Dinner</div>
+            <div class="title">Dinner at Butchers Buffet</div>
             <div class="time">Evening</div>
           </div>
-          <div class="desc">Venue TBC — feast befitting the occasion.</div>
-          <span class="badge tbc">To plan</span>
+          <div class="desc">Meat feast befitting the occasion, Haymarket.</div>
+          <a class="loc" href="https://www.google.com/maps/search/?api=1&query=Butchers+Buffet+Haymarket" target="_blank" rel="noopener">📍 Butchers Buffet, Haymarket</a>
+          <span class="badge booked">Planned</span>
         </div>
       </div>
 
@@ -469,6 +484,7 @@
             <div class="time">Evening</div>
           </div>
           <div class="desc">Mango coco to close out the day sweetly.</div>
+          <a class="loc" href="https://www.google.com/maps/search/?api=1&query=Mango+Coco%2C+421+Pitt+St%2C+Haymarket+NSW+2000" target="_blank" rel="noopener">📍 421 Pitt St, Haymarket</a>
           <span class="badge booked">Planned</span>
         </div>
       </div>
