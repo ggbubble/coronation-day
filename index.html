@@ -326,6 +326,23 @@
     font-size: 12.5px;
   }
 
+  .photos {
+    margin-top: 44px;
+  }
+  .photos iframe {
+    width: 100%;
+    height: 380px;
+    border: 1px solid var(--pink-line);
+    border-radius: 16px;
+    display: block;
+  }
+  .photos .hint {
+    text-align: center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    margin-top: 10px;
+  }
+
   footer .bow {
     font-size: 18px;
     margin-bottom: 8px;
@@ -492,6 +509,12 @@
     </div>
 
     <a class="cta" href="https://drive.google.com/drive/folders/1frsg34YI3MzoZt7FzwCW0szlEQiiTVNm?usp=sharing" target="_blank" rel="noopener">📸 Add Your Photos</a>
+
+    <div class="photos">
+      <h2 class="section">as it happens</h2>
+      <iframe src="https://drive.google.com/embeddedfolderview?id=1frsg34YI3MzoZt7FzwCW0szlEQiiTVNm#grid" loading="lazy" title="Shared coronation day photos"></iframe>
+      <p class="hint">Refresh the page to see new photos as they're added.</p>
+    </div>
 
     <footer>
       <span class="bow">🎀</span>
